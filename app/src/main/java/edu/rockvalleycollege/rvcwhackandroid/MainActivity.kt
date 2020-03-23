@@ -31,8 +31,8 @@ class MainActivity : AppCompatActivity() {
         var GameBackGround = findViewById<ConstraintLayout>(R.id.GameCanvas)
         var btnImgButton = findViewById<ImageButton>(R.id.imgMole)
         //set objects offscreen
-        btnImgButton.setTranslationX(-900F)
-        btnImgButton.setTranslationY(-900F)
+        btnImgButton.setTranslationX(-300F)
+        btnImgButton.setTranslationY(-300F)
         //start invisible
        btnImgButton.visibility = View.INVISIBLE
         btnImgButton.bringToFront()
@@ -40,12 +40,12 @@ class MainActivity : AppCompatActivity() {
         //
         btnControl.setOnClickListener{
             if (btnControl.text == "Start"){
-                Toast.makeText (this, "Tap Android To Score¡", 3) .show ()
+                Toast.makeText (this, "Tap Android To Score¡",Toast.LENGTH_LONG) .show ()
                 btnControl.text = "Stop"
                 score = 0
                 txtScore.text = "Score: " + score.toString()
-                btnImgButton.setTranslationX(-900F)
-                btnImgButton.setTranslationY(-900F)
+                btnImgButton.setTranslationX(-300F)
+                btnImgButton.setTranslationY(-300F)
                 timer = Timer()
                 timer.schedule(timerTask {ChangeImage()},3000)
                 ChangeImage()
@@ -53,8 +53,8 @@ class MainActivity : AppCompatActivity() {
             }else{
                 btnImgButton.visibility = View.INVISIBLE
                 btnControl.text = "Start"
-                btnImgButton.setTranslationX(-900F)
-                btnImgButton.setTranslationY(-900F)
+                btnImgButton.setTranslationX(-300F)
+                btnImgButton.setTranslationY(-300F)
                 timer.cancel()
             }
 
@@ -67,8 +67,8 @@ class MainActivity : AppCompatActivity() {
                 txtScore.text = "You Have Won!"
                 score = 0
                 btnControl.text = "Start"
-                btnImgButton.setTranslationX(-900F)
-                btnImgButton.setTranslationY(-900F)
+                btnImgButton.setTranslationX(-300F)
+                btnImgButton.setTranslationY(-300F)
             }else {
                 txtScore.text = "Score: " + score.toString()
             }
@@ -81,11 +81,11 @@ class MainActivity : AppCompatActivity() {
             txtScore.text = "Score: " + score.toString()
             if (score == 0 || score == -100){
                 btnImgButton.visibility = View.INVISIBLE
-                Toast.makeText (this, "Game Over", 3) .show ()
+                Toast.makeText (this, "Game Over", Toast.LENGTH_LONG) .show ()
                 score = 0
                 txtScore.text = "Score: " + score.toString()
-                btnImgButton.setTranslationX(-900F)
-                btnImgButton.setTranslationY(-900F)
+                btnImgButton.setTranslationX(-300F)
+                btnImgButton.setTranslationY(-300F)
                 timer.cancel()
                 btnControl.text = "Start"
 
